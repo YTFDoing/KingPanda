@@ -9,7 +9,7 @@
 import UIKit
 import ObjectMapper
 
-open class Request: BaseRequest {
+open class KingPanda: BaseRequest {
 
     ///networkConfigInfo protocol
     open var responseDataType: ResponseType?

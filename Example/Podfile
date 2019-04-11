@@ -1,6 +1,6 @@
-use_frameworks!
 
 target 'KingPanda_Example' do
+  use_frameworks!
   pod 'KingPanda', :path => '../'
 
   target 'KingPanda_Tests' do
