@@ -1,15 +1,30 @@
 PODS:
-  - KingPanda (0.1.0)
+  - Alamofire (4.8.2)
+  - CryptoSwift (1.0.0)
+  - KingPanda (0.0.1):
+    - Alamofire
+    - CryptoSwift
+    - ObjectMapper
+  - ObjectMapper (3.4.2)
 
 DEPENDENCIES:
   - KingPanda (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - CryptoSwift
+    - ObjectMapper
 
 EXTERNAL SOURCES:
   KingPanda:
     :path: "../"
 
 SPEC CHECKSUMS:
-  KingPanda: 9c49527a3503c50139b7620359be2ff03e8e24ff
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
+  KingPanda: 1d8e9f095c20c342c069c0001a36f111ec2a702e
+  ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
 
 PODFILE CHECKSUM: b8115cd875e7e6e0f0e73548cc75f8182b8839e0
 

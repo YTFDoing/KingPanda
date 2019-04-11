@@ -31,7 +31,7 @@ open class KingPanda: BaseRequest {
 }
 
 //MARK: Method
-extension Request {
+extension KingPanda {
     
     public func startRequest(success: @escaping responseClosure, fail failure: @escaping responseClosure) {
         startRequestWithClosure(successed: success, failed: failure);
@@ -45,7 +45,7 @@ extension Request {
 }
 
 //MARK: NetworkConfigInfo protocol
-extension Request: NetworkConfigInfo {
+extension KingPanda: NetworkConfigInfo {
     public var responseType: ResponseType? {
         return responseDataType
     }
