@@ -8,17 +8,16 @@
 # KingPanda介绍
 ###KingPanda基于Alamofire三方库进行封装,依赖ObjectMapper
 
-#KingPanda安装
-####通过[CocoaPods](https://cocoapods.org)安装, 在Podfile里添加如下代码：
+# KingPanda安装
+#### 通过[CocoaPods](https://cocoapods.org)安装, 在Podfile里添加如下代码：
 
 ```ruby
 pod 'KingPanda'
 ```
-#KingPanda使用
-####配置网络请求的BaseUrl
-####在Appdelegate里导入KingPanda模块，并配置baseUrl，如下:
-
-> ###
+# KingPanda使用
+#### 配置网络请求的BaseUrl
+#### 在Appdelegate里导入KingPanda模块，并配置baseUrl，如下:
+>
 >       import KingPanda
 >       @UIApplicationMain
 >       class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -33,8 +32,8 @@ pod 'KingPanda'
 >           }                 
 >       }
 
-###新建swift文件，创建类名，导入KingPanda, 并继承KingPanda和增加初始化方法，如：
-> ####
+### 新建swift文件，创建类名，导入KingPanda, 并继承KingPanda和增加初始化方法，如：
+> 
 >       import Watermelon
 >       Class TestApi: KingPanda {
             override init() {
@@ -44,9 +43,9 @@ pod 'KingPanda'
 >       }
 > 
 
-###配置请求所需参数
+### 配置请求所需参数
 
-####实现网络配置协议
+#### 实现网络配置协议
 
 >       extension HomeApi: NetworkConfigInfo {
 >           //该类型为请求成功后返回的数据类型，.model表示返回的是自定义model类型
@@ -79,7 +78,7 @@ pod 'KingPanda'
 >           }
 >       }
 
-###配置自定义Model
+### 配置自定义Model
 >       import ObjectMapper
 >       class TestModel: Mappable {
 >           var code: Int?
@@ -103,8 +102,8 @@ pod 'KingPanda'
 >           ......
 >       }
 
-###网络请求
-####返回model的请求
+### 网络请求
+#### 返回model的请求
 
 >         let apiManager = TestApi()
 >         apiManager?.requestSuccessed = { (result) in
@@ -118,8 +117,8 @@ pod 'KingPanda'
 >         apiManage?.start(withModel: TestModel())
 
 
-####返回Json的请求有两种：
-#####第一种方式为：
+#### 返回Json的请求有两种：
+##### 第一种方式为：
 >         let apiManager = TestApi()
 >         apiManager.delegate = self
 >         apiManager.start()
@@ -134,7 +133,7 @@ pod 'KingPanda'
 >             }
 >         }
 
-#####第二种方式为：
+##### 第二种方式为：
 >         let apiManager = TestApi()
 >         apiManage?.startRequestWithClosure(successed: { (result) in
 >             //请求成功
