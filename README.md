@@ -15,8 +15,8 @@
 pod 'KingPanda'
 ```
 # KingPanda使用
-#### 配置网络请求的BaseUrl
-#### 在Appdelegate里导入KingPanda模块，并配置baseUrl，如下:
+### 配置网络请求的BaseUrl
+##### 在Appdelegate里导入KingPanda模块，并配置baseUrl，如下:
 ```
   import KingPanda
   @UIApplicationMain
@@ -32,7 +32,7 @@ pod 'KingPanda'
       }                 
   }
 ```
-### 新建swift文件，创建类名，导入KingPanda, 并继承KingPanda和增加初始化方法，如：
+##### 新建swift文件，创建类名，导入KingPanda, 并继承KingPanda和增加初始化方法，如：
  ```
   import Watermelon
   Class TestApi: KingPanda {
@@ -45,7 +45,7 @@ pod 'KingPanda'
 
 ### 配置请求所需参数
 
-#### 实现网络配置协议
+##### 实现网络配置协议
 ```
   extension HomeApi: NetworkConfigInfo {
       //该类型为请求成功后返回的数据类型，.model表示返回的是自定义model类型
@@ -104,7 +104,7 @@ pod 'KingPanda'
   }
 ```
 ### 网络请求
-#### 返回model的请求
+##### 返回model的请求
 ```
     let apiManager = TestApi()
     apiManager?.requestSuccessed = { (result) in
@@ -119,7 +119,7 @@ pod 'KingPanda'
 ```
 
 #### 返回Json的请求有两种：
-##### 第一种方式为：
+###### 第一种方式为：
 ```
     let apiManager = TestApi()
     apiManager.delegate = self
