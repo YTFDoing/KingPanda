@@ -6,7 +6,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/KingPanda.svg?style=flat)](https://cocoapods.org/pods/KingPanda)
 
 # KingPanda介绍
-###KingPanda基于Alamofire三方库进行封装,依赖ObjectMapper
+### KingPanda基于Alamofire三方库进行封装,依赖ObjectMapper
 
 # KingPanda安装
 #### 通过[CocoaPods](https://cocoapods.org)安装, 在Podfile里添加如下代码：
