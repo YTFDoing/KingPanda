@@ -1,0 +1,6 @@
+framework module KingPanda {
+  umbrella header "KingPanda-umbrella.h"
+
+  export *
+  module * { export * }
+}

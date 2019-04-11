@@ -1,0 +1,22 @@
+{
+  "name": "KingPanda",
+  "version": "0.1.0",
+  "summary": "A short description of KingPanda.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/hsdoing@163.com/KingPanda",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "hsdoing@163.com": "2885870415@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/hsdoing@163.com/KingPanda.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "KingPanda/Classes/**/*"
+}

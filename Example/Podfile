@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'KingPanda_Example' do
+  pod 'KingPanda', :path => '../'
+
+  target 'KingPanda_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

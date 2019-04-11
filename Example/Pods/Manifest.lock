@@ -1,0 +1,16 @@
+PODS:
+  - KingPanda (0.1.0)
+
+DEPENDENCIES:
+  - KingPanda (from `../`)
+
+EXTERNAL SOURCES:
+  KingPanda:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  KingPanda: 9c49527a3503c50139b7620359be2ff03e8e24ff
+
+PODFILE CHECKSUM: b8115cd875e7e6e0f0e73548cc75f8182b8839e0
+
+COCOAPODS: 1.6.0
