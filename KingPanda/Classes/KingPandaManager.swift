@@ -10,9 +10,9 @@ import Foundation
 import Alamofire
 import ObjectMapper
 
-open class NetworkManager {
+open class KingPandaManager {
     ///singleton pattern
-    static let sharedInstance = NetworkManager()
+    static let shared = KingPandaManager()
     
     open var configure = NetworkConfig.shared
     
@@ -22,11 +22,11 @@ open class NetworkManager {
     
     fileprivate let defaultTimeout = 60.0
     
-    fileprivate let queue = DispatchQueue(label: "com.watermelon.queue", qos: .userInteractive, attributes: .concurrent)
+    fileprivate let queue = DispatchQueue(label: "com.kingpanda.queue", qos: .userInteractive, attributes: .concurrent)
 }
 
 // MARK: - method
-extension NetworkManager {
+extension KingPandaManager {
 
     /// send request
     func addRequest(_ request: BaseRequest) {
@@ -89,7 +89,7 @@ extension NetworkManager {
 }
 
 // MARK: - request method
-extension NetworkManager {
+extension KingPandaManager {
     
     func sessionTaskForRequest(_ request: BaseRequest) -> URLSessionTask{
         
@@ -115,19 +115,27 @@ extension NetworkManager {
             SessionManager.default.session.configuration.timeoutIntervalForRequest = defaultTimeout
         }
         
+        var paramsEncoding: ParameterEncoding?
+        let encoding = request.configInfo?.encoding
+        if encoding == .JSON {
+            paramsEncoding = JSONEncoding.default
+        } else {
+            paramsEncoding = URLEncoding.default
+        }
+        
         switch method! {
         case .POST:
-            return dataRequestTask(url!, .post, params, JSONEncoding.default, header!)
+            return dataRequestTask(url!, .post, params, paramsEncoding!, header!)
         case .GET:
-            return dataRequestTask(url!, .get, params, JSONEncoding.default, header!)
+            return dataRequestTask(url!, .get, params, paramsEncoding!, header!)
         case .PUT:
-            return dataRequestTask(url!, .put, params, JSONEncoding.default, header!)
+            return dataRequestTask(url!, .put, params, paramsEncoding!, header!)
         case .DELETE:
-            return dataRequestTask(url!, .delete, params, JSONEncoding.default, header!)
+            return dataRequestTask(url!, .delete, params, paramsEncoding!, header!)
         }
     }
     
-    func dataRequestTask(_ url: URL, _ method: HTTPMethod, _ params: [String: Any]?, _ encoding: JSONEncoding, _ header: [String: String]) -> URLSessionTask {
+    func dataRequestTask(_ url: URL, _ method: HTTPMethod, _ params: [String: Any]?, _ encoding: ParameterEncoding, _ header: [String: String]) -> URLSessionTask {
         let requestData = Alamofire.request(url, method: method, parameters: params, encoding: encoding, headers: header)
         requestData.responseJSON { (response) in
             self.handleResponseResult(requestData.task!, response)
@@ -145,7 +153,7 @@ extension NetworkManager {
 }
 
 // MARK: - response method
-extension NetworkManager {
+extension KingPandaManager {
     
     func handleResponseResult(_ task: URLSessionTask, _ response: DataResponse<Any>) {
         lock.lock()
@@ -162,7 +170,7 @@ extension NetworkManager {
             let type: ResponseType = (request.configInfo?.responseType)!
             switch type {
             case .dictionary:
-                request.modelData = request.toDictionary(jsonString: response.result.value as? String)
+                request.modelData = response.result.value as! [String: Any]
                 break
             case .string:
                 request.modelData = response.result.value
@@ -206,7 +214,7 @@ extension NetworkManager {
 }
 
 //MARK: - response data is model type
-extension NetworkManager {
+extension KingPandaManager {
     /// send request
     func addRequest<T: BaseMappable>(_ request: BaseRequest, _ model: T) {
         

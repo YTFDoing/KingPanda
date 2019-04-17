@@ -12,7 +12,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let api = TestApi.init()
+        api.startRequest(success: { (response) in
+            debugPrint(response.modelData as? [String: Any] ?? [:])
+        }) { (response) in
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {

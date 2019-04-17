@@ -12,6 +12,7 @@ import ObjectMapper
 open class KingPanda: BaseRequest {
 
     ///networkConfigInfo protocol
+    open var paramsEncoding: ParamsEncodingType?
     open var responseDataType: ResponseType?
     open var requestMethod: HttpMethod?
     open var requestBaseUrlString: String?
@@ -46,6 +47,10 @@ extension KingPanda {
 
 //MARK: NetworkConfigInfo protocol
 extension KingPanda: NetworkConfigInfo {
+    public var encoding: ParamsEncodingType? {
+        return paramsEncoding
+    }
+    
     public var responseType: ResponseType? {
         return responseDataType
     }

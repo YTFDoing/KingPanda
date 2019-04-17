@@ -29,8 +29,13 @@ public enum ResponseType {
     case string
 }
 
+public enum ParamsEncodingType {
+    case JSON
+    case URL
+}
+
 public protocol NetworkConfigInfo {
-    
+    var encoding: ParamsEncodingType? { get }
     var responseType: ResponseType? { get }
     var method: HttpMethod? { get }
     var baseUrl: String? { get }

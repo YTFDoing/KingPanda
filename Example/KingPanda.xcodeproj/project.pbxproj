@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27FD6928226730A3004D1964 /* TestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FD6927226730A3004D1964 /* TestApi.swift */; };
 		5914B0BC9CB0FD9DC0D79F85 /* Pods_KingPanda_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50EF580527DB09382E5A9CFA /* Pods_KingPanda_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -32,8 +33,9 @@
 		0674DE41876A2A793ED6E2F6 /* Pods-KingPanda_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KingPanda_Example.debug.xcconfig"; path = "Target Support Files/Pods-KingPanda_Example/Pods-KingPanda_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		0CA6A282CECF76639CEF89AD /* Pods-KingPanda_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KingPanda_Tests.debug.xcconfig"; path = "Target Support Files/Pods-KingPanda_Tests/Pods-KingPanda_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		22B5EAB83303F05C7CAF1364 /* Pods_KingPanda_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KingPanda_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		27FD6927226730A3004D1964 /* TestApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestApi.swift; sourceTree = "<group>"; };
 		4CB78F5CCA5BB5337120DF4E /* Pods-KingPanda_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KingPanda_Tests.release.xcconfig"; path = "Target Support Files/Pods-KingPanda_Tests/Pods-KingPanda_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		4D783A7E506C0F52C5F51387 /* KingPanda.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = KingPanda.podspec; path = ../KingPanda.podspec; sourceTree = "<group>"; };
+		4D783A7E506C0F52C5F51387 /* KingPanda.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = KingPanda.podspec; path = ../KingPanda.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		50EF580527DB09382E5A9CFA /* Pods_KingPanda_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KingPanda_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* KingPanda_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KingPanda_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 		607FACD21AFB9204008FA782 /* Example for KingPanda */ = {
 			isa = PBXGroup;
 			children = (
+				27FD6927226730A3004D1964 /* TestApi.swift */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -347,6 +350,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				27FD6928226730A3004D1964 /* TestApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

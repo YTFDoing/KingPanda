@@ -63,18 +63,18 @@ extension BaseRequest {
     
     ///use delegate pattern request network
     public func start() {
-        NetworkManager.sharedInstance.addRequest(self)
+        KingPandaManager.shared.addRequest(self)
     }
     
     ///stop current request task
     public func stop() {
         delegate = nil
-        NetworkManager.sharedInstance.cancelRequest(self)
+        KingPandaManager.shared.cancelRequest(self)
     }
     
     ///response custom model data
     public func start<T: BaseMappable>(withModel model: T) {
-        NetworkManager.sharedInstance.addRequest(self, model)
+        KingPandaManager.shared.addRequest(self, model)
     }
 }
 
