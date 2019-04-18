@@ -268,19 +268,27 @@ extension KingPandaManager {
             SessionManager.default.session.configuration.timeoutIntervalForRequest = defaultTimeout
         }
         
+        var paramsEncoding: ParameterEncoding?
+        let encoding = request.configInfo?.encoding
+        if encoding == .JSON {
+            paramsEncoding = JSONEncoding.default
+        } else {
+            paramsEncoding = URLEncoding.default
+        }
+        
         switch method! {
         case .GET:
-            return dataModelRequestTask(url!, .get, params, JSONEncoding.default, header!, model)
+            return dataModelRequestTask(url!, .get, params, paramsEncoding!, header!, model)
         case .POST:
-            return dataModelRequestTask(url!, .post, params, JSONEncoding.default, header!, model)
+            return dataModelRequestTask(url!, .post, params, paramsEncoding!, header!, model)
         case .PUT:
-            return dataModelRequestTask(url!, .put, params, JSONEncoding.default, header!, model)
+            return dataModelRequestTask(url!, .put, params, paramsEncoding!, header!, model)
         case .DELETE:
-            return dataModelRequestTask(url!, .delete, params, JSONEncoding.default, header!, model)
+            return dataModelRequestTask(url!, .delete, params, paramsEncoding!, header!, model)
         }
     }
     
-    func dataModelRequestTask<T: BaseMappable>(_ url: URL, _ method: HTTPMethod, _ params: [String: Any]?, _ encoding: JSONEncoding, _ header: [String: String], _ model: T) -> URLSessionTask {
+    func dataModelRequestTask<T: BaseMappable>(_ url: URL, _ method: HTTPMethod, _ params: [String: Any]?, _ encoding: ParameterEncoding, _ header: [String: String], _ model: T) -> URLSessionTask {
         
         let requestData = Alamofire.request(url, method: method, parameters: params, encoding: encoding, headers: header)
         requestData.responseString { [weak self] (response: DataResponse<String>) in
